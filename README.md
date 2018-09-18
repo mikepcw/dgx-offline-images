@@ -5,10 +5,39 @@ In order to `docker pull` from the `nvcr.io/nvidia` repository, you need to be a
 
 Utilises a multithreaded implementation `xz` (`pixz`) where available for archive compression and decompression. The `.tar.xz` archives created by `pixz` are compatible with the standard (single threaded) system `xz` tool.
 
-## images\_list.txt
-Each line contains the full docker repository and tag to be used by the `docker pull` command. One line per image you want to process. 
+# Usage
+Edit `images_list.txt` to include only the docker images you wish to archive (see below).
+Run the following on an internet-connected system that is already authenticated with your `nvcr.io` API key:
+```
+git clone https://github.com/mikepcw/dgx-offline-images
+cd dgx-offline-images
+./save_compressed_tars.sh
+```
+Then verify the checksums of the archived images:
+```
+./verify_checksums.sh
+```
+Finally, copy the created archives to the offline machine with docker already installed and load them using:
+```
+./load_compressed_tars.sh
+```
 
-## Compression and decompression
+If you already have uncompressed tars produced from a `docker save` operation, you can perform only the compression step using `compress_tars.sh`. See note below about when comparing checksums of the archives themselves between runs.
+
+## Parallel xz using pixz
+It's a good idea to install `pixz` on both the internet-connected machine and the DGX system for *much* faster archive compression and decompression:
+```
+sudo apt update
+sudo apt install pixz
+```
+
+## images\_list.txt
+Each line contains the full image name, including repository path and tag. This is the same format that is consumed by the `docker pull` command. 
+One line per image you want to process. Remove what you don't want to archive.
+
+The example `image_list.txt` includes only Python 3 versions of frameworks where Python 2 and 3 versions exist, and Python 2 otherwise.
+
+# Compression and decompression
 `pixz` -> `xz` (most -> least preferred)
 
 ## A note about checksums
