@@ -1,5 +1,5 @@
-# dgx1-offline-images
-Convenience scripts to save and load compressed docker images for DGX-1. Useful for archiving images from an internet-connected machine for loading into an airgapped DGX-1.
+# dgx-offline-images
+Convenience scripts to save and load compressed docker images for DGX systems. Useful for archiving images from an internet-connected machine for loading into an airgapped DGX environment.
 
 Do perform the `docker pull` from the `nvcr.io/nvidia` repository, you need to be authenticated using your compute.nvidia.com API key (a DGX-1 subscription is required on the machine connected to the internet).
 
