@@ -1,9 +1,9 @@
 # dgx-offline-images
 Convenience scripts to save and load compressed docker images for DGX systems. Useful for archiving images from an internet-connected machine for loading into an airgapped DGX environment.
 
-Do perform the `docker pull` from the `nvcr.io/nvidia` repository, you need to be authenticated using your compute.nvidia.com API key (a DGX-1 subscription is required on the machine connected to the internet).
+Do perform the `docker pull` from the `nvcr.io/nvidia` repository, you need to be authenticated using your API key which can be generated from https://ngc.nvidia.com (on the machine connected to the internet).
 
-Utilises multithreaded implementations of bzip2 (lbzip2 or pbzip2) where available. The .bz2 archives created by all three tools are compatible with the standard (single threaded) system bzip tool.
+Utilises multithreaded implementations of bzip2 (lbzip2 or pbzip2) where available for archive compression and decompression. The .bz2 archives created by all three tools are compatible with the standard (single threaded) system bzip tool.
 
 ## Decompression
 lbzip2 -> pbzip2 -> bzip2 (most -> least preferred)
