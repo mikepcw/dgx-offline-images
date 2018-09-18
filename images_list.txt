@@ -1,0 +1,2 @@
+hello-world:latest
+nvcr.io/nvidia/tensorflow:18.08-py3

@@ -1,15 +1,15 @@
 #!/bin/bash
-bz2app=bzip2
-if command -v lbzip2 > /dev/null 2>&1 ; then bz2app=lbzip2; fi
-if command -v pbzip2 > /dev/null 2>&1 ; then bz2app=pbzip2; fi
+zipapp=xz
+if command -v pixz > /dev/null 2>&1 ; then zipapp=pixz; fi
 
-version=17.05
-for image in caffe caffe2 cntk digits mxnet pytorch tensorflow theano torch;
+for image in $(cat images_list.txt);
 do
-    docker pull nvcr.io/nvidia/$image:$version
-    docker save nvcr.io/nvidia/$image:$version | ${bz2app} -v > $image-$version.tar.bz2
+    echo Pulling ${image}...
+    filename=${image//\//_}
+    filename=${filename//\:/-}
+    docker pull ${image}
+    echo Saving ${filename}.tar.xz...
+    docker save ${image} | ${zipapp} > ${filename}.tar.xz
+    echo Done!
 done
 
-cudatag=8.0-cudnn6-devel-ubuntu16.04
-docker pull nvcr.io/nvidia/cuda:$cudatag
-docker save nvcr.io/nvidia/cuda:$cudatag | ${bz2app} -v > cuda-$cudatag.tar.bz2

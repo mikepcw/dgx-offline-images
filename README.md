@@ -1,25 +1,21 @@
 # dgx-offline-images
 Convenience scripts to save and load compressed docker images for DGX systems. Useful for archiving images from an internet-connected machine for loading into an airgapped DGX environment.
 
-Do perform the `docker pull` from the `nvcr.io/nvidia` repository, you need to be authenticated using your API key which can be generated from https://ngc.nvidia.com (on the machine connected to the internet).
+In order to `docker pull` from the `nvcr.io/nvidia` repository, you need to be authenticated using your API key which can be generated from https://ngc.nvidia.com (on the machine connected to the internet).
 
-Utilises multithreaded implementations of bzip2 (lbzip2 or pbzip2) where available for archive compression and decompression. The .bz2 archives created by all three tools are compatible with the standard (single threaded) system bzip tool.
+Utilises a multithreaded implementation `xz` (`pixz`) where available for archive compression and decompression. The `.tar.xz` archives created by `pixz` are compatible with the standard (single threaded) system `xz` tool.
 
-## Decompression
-lbzip2 -> pbzip2 -> bzip2 (most -> least preferred)
+## images\_list.txt
+Each line contains the full docker repository and tag to be used by the `docker pull` command. One line per image you want to process. 
 
-Since lbzip2 can efficiently decompress archives created by all other tools.
-
-## Compression
-pbzip2 -> lbzip2 -> bzip2 (most -> least preferred)
-
-Since pbzip2 can only decompress archives created by itself efficiently.
+## Compression and decompression
+`pixz` -> `xz` (most -> least preferred)
 
 ## A note about checksums
-The `docker save` command does not currently produce bit-reproducible tar files (due to differing date modified fields), so each time `docker save` is invoked, the resulting tar has a different checksum.
+The `docker save` command does not currently produce bit-reproducible `tar` files (due to differing date modified fields), so each time `docker save` is invoked, the resulting tar has a different checksum. Hence, the compressed result also has a different checksum, and the final archive cannot be compared by their checksums directly.
 
-To get consistent checksums, you need to check the exploded tarball with `tar xO` (uppercase 'o').
-The `verify_checksums.sh` script demonstrates how to do this, and should be run on the created .tar.bz2 archives before distribution.
+To get consistent checksums, you need to check the exploded tarball with `tar xO` (uppercase 'O').
+The `verify_checksums.sh` script demonstrates how to do this, and should be run immediately after creating compressed `.tar.xz` archives and before distribution.
 
 Example checksum verification for 17.03 images:
 ```

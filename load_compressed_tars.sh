@@ -1,10 +1,11 @@
 #!/bin/bash
-bz2app=bzip2
-if command -v pbzip2 > /dev/null 2>&1 ; then bz2app=pbzip2; fi
-if command -v lbzip2 > /dev/null 2>&1 ; then bz2app=lbzip2; fi
+zipapp=xz
+if command -v pixz > /dev/null 2>&1 ; then zipapp=pixz; fi
 
-for archive in *.tar.bz2;
+for archive in *.tar.xz;
 do
-    ${bz2app} -dvck $archive | docker load
+    echo Loading ${archive}...
+    ${zipapp} -dk < ${archive} | docker load
+    echo Done!
 done
 

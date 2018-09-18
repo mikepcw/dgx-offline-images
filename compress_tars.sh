@@ -1,10 +1,10 @@
 #!/bin/bash
-bz2app=bzip2
-if command -v lbzip2 > /dev/null 2>&1 ; then bz2app=lbzip2; fi
-if command -v pbzip2 > /dev/null 2>&1 ; then bz2app=pbzip2; fi
+zipapp=xz
+if command -v pixz > /dev/null 2>&1 ; then zipapp=pixz; fi
 
-version=17.05
-for image in *.tar;
+for tarball in *.tar;
 do
-    $bz2app -vk $image
+    echo Compressing ${tarball}...
+    ${zipapp} -k ${tarball} ${tarball}.xz
+    echo Done!
 done

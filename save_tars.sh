@@ -1,12 +1,13 @@
 #!/bin/bash
 
-version=17.05
-for image in caffe caffe2 cntk digits mxnet pytorch tensorflow theano torch;
+for image in $(cat images_list.txt);
 do
-    docker pull nvcr.io/nvidia/$image:$version
-    docker save nvcr.io/nvidia/$image:$version -o $image-$version.tar
+    echo Pulling ${image}...
+    filename=${image//\//_}
+    filename=${filename//\:/-}
+    docker pull ${image}
+    echo Saving ${filename}.tar.xz...
+    docker save ${image} -o ${filename}.tar
+    echo Done!
 done
 
-cudatag=8.0-cudnn6-devel-ubuntu16.04
-docker pull nvcr.io/nvidia/cuda:$cudatag
-docker save nvcr.io/nvidia/cuda:$cudatag -o cuda-$cudatag.tar
