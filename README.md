@@ -5,6 +5,13 @@ In order to `docker pull` from the `nvcr.io/nvidia` repository, you need to be a
 
 Utilises a multithreaded implementation `xz` (`pixz`) where available for archive compression and decompression. The `.tar.xz` archives created by `pixz` are compatible with the standard (single threaded) system `xz` tool.
 
+Most scripts will print out timing information. See note below about performance.
+
+## Naming convention
+The generated archives automatically inherit the full docker repository name and tag info. The forward slashes are replaced with underscores, while the colons are replaced with dashes, to ensure portability across filesystems. e.g.:
+
+The image `nvcr.io/nvidia/caffe-18.08-py2` is saved as `nvcr.io_nvidia_caffe-18.08-py2.tar.xz`.
+
 # Usage
 Edit `images_list.txt` to include only the docker images you wish to archive (see below).
 Run the following on an internet-connected system that is already authenticated with your `nvcr.io` API key:
@@ -24,12 +31,14 @@ Finally, copy the created archives to the offline machine with docker already in
 
 If you already have uncompressed tars produced from a `docker save` operation, you can perform only the compression step using `compress_tars.sh`. See note below about when comparing checksums of the archives themselves between runs.
 
-## Parallel xz using pixz
+## Improving performance using pixz
 It's a good idea to install `pixz` on both the internet-connected machine and the DGX system for *much* faster archive compression and decompression:
 ```
 sudo apt update
 sudo apt install pixz
 ```
+The speed-ups scales roughly with number of CPU cores. i.e. a 10-core machine will be 10x faster to compress and decompress images with `pixz` than with the standard system `xz` tool.
+Timing information is printed from each compression/decompression operation by these scripts.
 
 ## images\_list.txt
 Each line contains the full image name, including repository path and tag. This is the same format that is consumed by the `docker pull` command. 
