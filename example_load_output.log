@@ -1,0 +1,48 @@
+Loading nvcr.io_nvidia_caffe-18.08-py2.tar.xz...
+Loaded image: nvcr.io/nvidia/caffe:18.08-py2
+Elapsed time 32 seconds
+Done!
+Loading nvcr.io_nvidia_caffe2-18.08-py3.tar.xz...
+Loaded image: nvcr.io/nvidia/caffe2:18.08-py3
+Elapsed time 1 minutes and 35 seconds
+Done!
+Loading nvcr.io_nvidia_cntk-18.08-py3.tar.xz...
+Loaded image: nvcr.io/nvidia/cntk:18.08-py3
+Elapsed time 2 minutes and 31 seconds
+Done!
+Loading nvcr.io_nvidia_cuda-9.0-cudnn7.2-devel-ubuntu16.04.tar.xz...
+Loaded image: nvcr.io/nvidia/cuda:9.0-cudnn7.2-devel-ubuntu16.04
+Elapsed time 5 seconds
+Done!
+Loading nvcr.io_nvidia_digits-18.08.tar.xz...
+Loaded image: nvcr.io/nvidia/digits:18.08
+Elapsed time 3 minutes and 28 seconds
+Done!
+Loading nvcr.io_nvidia_inferenceserver-18.08.1-py3.tar.xz...
+Loaded image: nvcr.io/nvidia/inferenceserver:18.08.1-py3
+Elapsed time 12 seconds
+Done!
+Loading nvcr.io_nvidia_mxnet-18.08-py3.tar.xz...
+Loaded image: nvcr.io/nvidia/mxnet:18.08-py3
+Elapsed time 1 minutes and 53 seconds
+Done!
+Loading nvcr.io_nvidia_pytorch-18.08-py3.tar.xz...
+Loaded image: nvcr.io/nvidia/pytorch:18.08-py3
+Elapsed time 2 minutes and 16 seconds
+Done!
+Loading nvcr.io_nvidia_tensorflow-18.08-py3.tar.xz...
+Loaded image: nvcr.io/nvidia/tensorflow:18.08-py3
+Elapsed time 1 minutes and 42 seconds
+Done!
+Loading nvcr.io_nvidia_tensorrt-18.08-py3.tar.xz...
+Loaded image: nvcr.io/nvidia/tensorrt:18.08-py3
+Elapsed time 20 seconds
+Done!
+Loading nvcr.io_nvidia_theano-18.08.tar.xz...
+Loaded image: nvcr.io/nvidia/theano:18.08
+Elapsed time 1 minutes and 52 seconds
+Done!
+Loading nvcr.io_nvidia_torch-18.08-py2.tar.xz...
+Loaded image: nvcr.io/nvidia/torch:18.08-py2
+Elapsed time 23 seconds
+Done!

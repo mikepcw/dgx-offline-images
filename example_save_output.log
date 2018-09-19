@@ -1,0 +1,84 @@
+Pulling nvcr.io/nvidia/caffe:18.08-py2...
+18.08-py2: Pulling from nvidia/caffe
+Digest: sha256:578d7d854d594772c06da50731554c38fec5e87e0f51d8c4d10c9dc112614719
+Status: Image is up to date for nvcr.io/nvidia/caffe:18.08-py2
+Saving nvcr.io_nvidia_caffe-18.08-py2.tar.xz...
+Elapsed time 2 minutes and 30 seconds
+Done!
+Pulling nvcr.io/nvidia/caffe2:18.08-py3...
+18.08-py3: Pulling from nvidia/caffe2
+Digest: sha256:08d00bac1d54bc7a1b249c67e46540e094a0512cbae993b6a0d3a15aeaf5771f
+Status: Image is up to date for nvcr.io/nvidia/caffe2:18.08-py3
+Saving nvcr.io_nvidia_caffe2-18.08-py3.tar.xz...
+Elapsed time 2 minutes and 11 seconds
+Done!
+Pulling nvcr.io/nvidia/cntk:18.08-py3...
+18.08-py3: Pulling from nvidia/cntk
+Digest: sha256:b35288945c894242e04584ff280d4ba562e0dd0135cf4c6e77a1472cd2fc0ef1
+Status: Image is up to date for nvcr.io/nvidia/cntk:18.08-py3
+Saving nvcr.io_nvidia_cntk-18.08-py3.tar.xz...
+Elapsed time 4 minutes and 36 seconds
+Done!
+Pulling nvcr.io/nvidia/cuda:9.0-cudnn7.2-devel-ubuntu16.04...
+9.0-cudnn7.2-devel-ubuntu16.04: Pulling from nvidia/cuda
+Digest: sha256:9ea69140a97666c8d1b7f654f9f62203c718a2d653cdf9538a6edc38710c012f
+Status: Image is up to date for nvcr.io/nvidia/cuda:9.0-cudnn7.2-devel-ubuntu16.04
+Saving nvcr.io_nvidia_cuda-9.0-cudnn7.2-devel-ubuntu16.04.tar.xz...
+Elapsed time 1 minutes and 14 seconds
+Done!
+Pulling nvcr.io/nvidia/digits:18.08...
+18.08: Pulling from nvidia/digits
+Digest: sha256:d255314f71a1de749bce21b93554c49cca1796c495fa3373bb5e1fe0468d9e17
+Status: Image is up to date for nvcr.io/nvidia/digits:18.08
+Saving nvcr.io_nvidia_digits-18.08.tar.xz...
+Elapsed time 4 minutes and 13 seconds
+Done!
+Pulling nvcr.io/nvidia/inferenceserver:18.08.1-py3...
+18.08.1-py3: Pulling from nvidia/inferenceserver
+Digest: sha256:d72af8f5d0e9aaa5b2829314a01f98ae54ca8865c3fbf904605cd90e4180a227
+Status: Image is up to date for nvcr.io/nvidia/inferenceserver:18.08.1-py3
+Saving nvcr.io_nvidia_inferenceserver-18.08.1-py3.tar.xz...
+Elapsed time 1 minutes and 38 seconds
+Done!
+Pulling nvcr.io/nvidia/mxnet:18.08-py3...
+18.08-py3: Pulling from nvidia/mxnet
+Digest: sha256:c8902283c6c8683d64ca6998f285c072ebf37a8639efeaec508aa67781926092
+Status: Image is up to date for nvcr.io/nvidia/mxnet:18.08-py3
+Saving nvcr.io_nvidia_mxnet-18.08-py3.tar.xz...
+Elapsed time 2 minutes and 49 seconds
+Done!
+Pulling nvcr.io/nvidia/pytorch:18.08-py3...
+18.08-py3: Pulling from nvidia/pytorch
+Digest: sha256:41c8bbdb1976d90fe2d7974030090be5589d7e737172baea9395710890afaffc
+Status: Image is up to date for nvcr.io/nvidia/pytorch:18.08-py3
+Saving nvcr.io_nvidia_pytorch-18.08-py3.tar.xz...
+Elapsed time 3 minutes and 50 seconds
+Done!
+Pulling nvcr.io/nvidia/tensorflow:18.08-py3...
+18.08-py3: Pulling from nvidia/tensorflow
+Digest: sha256:c516bf47c1856564eebaaa88ad4110332d25d5d609f3ac31ac9ee0d036a49b96
+Status: Image is up to date for nvcr.io/nvidia/tensorflow:18.08-py3
+Saving nvcr.io_nvidia_tensorflow-18.08-py3.tar.xz...
+Elapsed time 2 minutes and 19 seconds
+Done!
+Pulling nvcr.io/nvidia/tensorrt:18.08-py3...
+18.08-py3: Pulling from nvidia/tensorrt
+Digest: sha256:7ee1e97a3bb1bd697d64f8391f2379527bd6421b95c1642b2ea12534fbfbe464
+Status: Image is up to date for nvcr.io/nvidia/tensorrt:18.08-py3
+Saving nvcr.io_nvidia_tensorrt-18.08-py3.tar.xz...
+Elapsed time 1 minutes and 47 seconds
+Done!
+Pulling nvcr.io/nvidia/theano:18.08...
+18.08: Pulling from nvidia/theano
+Digest: sha256:fd7c05503b0b1ee76c5236f805229083dba12f880eb266b8c9a7101e62616a61
+Status: Image is up to date for nvcr.io/nvidia/theano:18.08
+Saving nvcr.io_nvidia_theano-18.08.tar.xz...
+Elapsed time 2 minutes and 34 seconds
+Done!
+Pulling nvcr.io/nvidia/torch:18.08-py2...
+18.08-py2: Pulling from nvidia/torch
+Digest: sha256:4c473b4716b37f732c1f07129915d0bc832881e2cb9b4e082bf3e2443b8bb6c6
+Status: Image is up to date for nvcr.io/nvidia/torch:18.08-py2
+Saving nvcr.io_nvidia_torch-18.08-py2.tar.xz...
+Elapsed time 2 minutes and 0 seconds
+Done!
