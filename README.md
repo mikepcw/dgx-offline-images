@@ -30,7 +30,31 @@ Finally, copy the created archives to the offline machine with docker already in
 ```
 ./load_compressed_tars.sh
 ```
-
+You'll then see some output similar to below for each `.tar.xz` archive found:
+```
+$ ./load_compressed_tars.sh 
+Loading nvcr.io_nvidia_cuda-9.0-cudnn7.2-devel-ubuntu16.04.tar.xz...
+0a42ee6ceccb: Loading layer [==================================================>]  118.8MB/118.8MB
+c2af38e6b250: Loading layer [==================================================>]  15.87kB/15.87kB
+5e95929b2798: Loading layer [==================================================>]  14.85kB/14.85kB
+2166dba7c95b: Loading layer [==================================================>]  5.632kB/5.632kB
+bcff331e13e3: Loading layer [==================================================>]  3.072kB/3.072kB
+90c89134f2d3: Loading layer [==================================================>]  29.18kB/29.18kB
+0fe1bb4ac12a: Loading layer [==================================================>]  656.7MB/656.7MB
+4e17aedb9d1a: Loading layer [==================================================>]  17.41kB/17.41kB
+575abbc44398: Loading layer [==================================================>]  23.55kB/23.55kB
+7b741897a54c: Loading layer [==================================================>]  3.072kB/3.072kB
+30e389224cf8: Loading layer [==================================================>]    546MB/546MB
+728a59007147: Loading layer [==================================================>]  3.072kB/3.072kB
+c867dd4b6601: Loading layer [==================================================>]  207.9kB/207.9kB
+6b473caecabf: Loading layer [==================================================>]  627.2kB/627.2kB
+b9acc01e835f: Loading layer [==================================================>]  4.608kB/4.608kB
+e1503a5c8fd9: Loading layer [==================================================>]  288.8MB/288.8MB
+dcdc4c0cd095: Loading layer [==================================================>]  107.3MB/107.3MB
+Loaded image: nvcr.io/nvidia/cuda:9.0-cudnn7.2-devel-ubuntu16.04
+Elapsed time 25 seconds
+Done!
+```
 If you already have uncompressed tars produced from a `docker save` operation, you can perform only the compression step using `compress_tars.sh`. See note below about when comparing checksums of the archives themselves between runs.
 
 ## Improving performance using pixz
@@ -65,7 +89,7 @@ Note the `verify_checksums.sh` can only guarantee that the images inside `.tar.x
 
 Example checksum verification output for 18.08 images:
 ```
-test@dgx-1:~/docker$ ./verify_checksums.sh
+$ ./verify_checksums.sh
 Checking nvcr.io/nvidia/caffe:18.08-py2...
 5099685a5cf859b7e108165079211ce4  -
 5099685a5cf859b7e108165079211ce4  -
