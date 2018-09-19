@@ -56,6 +56,9 @@ The `docker save` command does not currently produce bit-reproducible `tar` file
 To get consistent checksums, you need to check the exploded tarball with `tar xO` (uppercase 'O').
 The `verify_checksums.sh` script demonstrates how to do this, and should be run immediately after creating compressed `.tar.xz` archives and before distribution.
 
+### Validity of the archives after copying to airgapped machine
+Note the `verify_checksums.sh` can only guarantee that the images inside `.tar.xz` were validly created *on the internet-connected machine*. The same check cannot be performed on the airgapped machine if it has no access to the remote repository. Therefore, it woudld be a good idea to verify the checksum of the archives themselves after transfer, and before loading the archives, on the airgapped machine. 
+
 Example checksum verification for 17.03 images:
 ```
 test@dgx-1:~/docker$ ./verify_checksums.sh
