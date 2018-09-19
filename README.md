@@ -53,6 +53,8 @@ The example `image_list.txt` includes only Python 3 versions of frameworks where
 ## A note about checksums
 The `docker save` command does not currently produce bit-reproducible `tar` files (due to differing date modified fields), so each time `docker save` is invoked, the resulting tar has a different checksum. Hence, the compressed result also has a different checksum, and the final archive cannot be compared by their checksums directly.
 
+Also, `xz` and `pixz` by definition do not produce bit-reproducible (albeit compatible) archives. So comparing the archive file is meaningless. It's much better to verify the contents of the uncompressed (exploded) tarball inside.
+
 To get consistent checksums, you need to check the exploded tarball with `tar xO` (uppercase 'O').
 The `verify_checksums.sh` script demonstrates how to do this, and should be run immediately after creating compressed `.tar.xz` archives and before distribution.
 
