@@ -1,5 +1,5 @@
 # dgx-offline-images
-Convenience scripts to save and load compressed docker images for DGX systems. Useful for archiving images from an internet-connected machine for loading into an airgapped DGX environment.
+Convenience scripts originally created to aid in the saving and loading of compressed docker images for DGX systems. Useful for archiving images from an internet-connected machine and loading them into an airgapped system. The `dgx` in the name and examples are for historical reasons. These scripts can be trivially modified to work with any system and docker repository.
 
 In order to `docker pull` from the `nvcr.io/nvidia` repository, you need to be authenticated using your API key which can be generated from https://ngc.nvidia.com (on the machine connected to the internet).
 
@@ -37,8 +37,9 @@ It's a good idea to install `pixz` on both the internet-connected machine and th
 sudo apt update
 sudo apt install pixz
 ```
-The speed-ups scales roughly with number of CPU cores. i.e. a 10-core machine will be 10x faster to compress and decompress images with `pixz` than with the standard system `xz` tool.
-Timing information is printed from each compression/decompression operation by these scripts.
+The speed-up with `pixz` over the standard system `xz` tools cales roughly with number of CPU cores. i.e. a 10-core machine will be 10x faster to compress and decompress images.
+
+Timing information is printed out from each compression/decompression operation for your convenience.
 
 ## images\_list.txt
 Each line contains the full image name, including repository path and tag. This is the same format that is consumed by the `docker pull` command. 
