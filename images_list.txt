@@ -10,3 +10,4 @@ nvcr.io/nvidia/tensorflow:18.08-py3
 nvcr.io/nvidia/tensorrt:18.08-py3
 nvcr.io/nvidia/theano:18.08
 nvcr.io/nvidia/torch:18.08-py2
+
