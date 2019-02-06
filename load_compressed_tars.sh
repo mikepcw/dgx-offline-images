@@ -15,8 +15,11 @@ function displaytime {
   printf '%d seconds\n' $S
 }
 
-for archive in *.tar.xz;
+for image in $(cat images_list.txt);
 do
+    # replace illegal characters using our naming scheme
+    archive=${image//\//_}
+    archive=${archive//\:/-}.tar.xz
     echo Loading ${archive}...
     SECONDS=0
     ${zipapp} -dk < ${archive} | docker load
